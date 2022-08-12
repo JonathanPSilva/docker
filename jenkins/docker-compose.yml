@@ -5,12 +5,12 @@ services:
     image: jenkins/jenkins:lts
     privileged: true
     user: root
-    container_name: jenkins
+    container_name: jenkins_server
     
     ports:
       - 8080:8080
       - 50000:50000
     
     volumes:
-      - /data/jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - ./data/jenkins_compose/jenkins_configuration:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
