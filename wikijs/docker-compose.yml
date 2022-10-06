@@ -1,8 +1,10 @@
 version: "3"
-services:
 
+services:
   db:
     image: postgres:11-alpine
+    container_name: wikijs_database
+    hostname: wiki-db
     environment:
       POSTGRES_DB: wiki
       POSTGRES_PASSWORD: wikijsrocks
@@ -15,6 +17,8 @@ services:
 
   wiki:
     image: ghcr.io/requarks/wiki:2
+    container_name: wikijs-frontend
+    hostname: wikijs-infra-docker
     depends_on:
       - db
     environment:
