@@ -21,7 +21,7 @@ services:
       - 3000:3000
 
 networks:
-  - grafana-net: {}
+  grafana-net:
 
 volumes:
-  - influxdb: {}
+  influxdb:
