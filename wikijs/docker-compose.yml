@@ -3,7 +3,7 @@ version: "3"
 services:
   db:
     image: postgres:11-alpine
-    container_name: wikijs_database
+    container_name: wiki_database
     hostname: wiki-db
     environment:
       POSTGRES_DB: wiki
@@ -17,7 +17,7 @@ services:
 
   wiki:
     image: ghcr.io/requarks/wiki:2
-    container_name: wikijs-frontend
+    container_name: wiki-frontend
     hostname: wikijs-infra-docker
     depends_on:
       - db
